@@ -23,3 +23,5 @@ doc/api/
 # environment variables
 .env
 ios/Flutter/tmp.xcconfig
+.flutter-plugins
+.flutter-plugins-dependencies
