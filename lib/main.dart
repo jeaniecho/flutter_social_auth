@@ -1,5 +1,7 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_config/flutter_config.dart';
 import 'package:flutter_social_auth/auth/apple_auth.dart';
 import 'package:flutter_social_auth/auth/facebook_auth.dart';
 import 'package:flutter_social_auth/auth/github_auth.dart';
@@ -14,7 +16,7 @@ import 'package:flutter_social_auth/common/size.dart';
 Future<void> main() async {
   // flutter_config
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+  await FlutterConfig.loadEnvVariables();
 
   runApp(const MyApp());
 }

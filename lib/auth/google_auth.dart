@@ -1,7 +1,7 @@
 import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_config/flutter_config.dart';
 import 'package:flutter_social_auth/common/size.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -16,7 +16,7 @@ class _GoogleAuthState extends State<GoogleAuth> {
   Future<bool> signIn() async {
     try {
       GoogleSignInAccount? googleUser = await GoogleSignIn(
-          clientId: dotenv.env['GOOGLE_CLIENT_ID_IOS']).signIn();
+          clientId: FlutterConfig.get('GOOGLE_CLIENT_ID_IOS')).signIn();
 
       if (googleUser != null) {
         return true;
