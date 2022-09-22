@@ -24,6 +24,7 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply from: project(':flutter_config').projectDir.getPath() + "/dotenv.gradle"
 
 android {
     compileSdkVersion flutter.compileSdkVersion
@@ -51,6 +52,9 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        manifestPlaceholders += [
+                'appAuthRedirectScheme': 'com.googleusercontent.apps.' + project.env.get("GOOGLE_CLIENT_ID_ANDROID")
+        ]
     }
 
     buildTypes {

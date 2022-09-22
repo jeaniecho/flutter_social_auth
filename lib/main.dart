@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_social_auth/auth/appleAuth.dart';
-import 'package:flutter_social_auth/auth/facebookAuth.dart';
-import 'package:flutter_social_auth/auth/githubAuth.dart';
-import 'package:flutter_social_auth/auth/googleAuth.dart';
-import 'package:flutter_social_auth/auth/instagramAuth.dart';
-import 'package:flutter_social_auth/auth/kakaoAuth.dart';
-import 'package:flutter_social_auth/auth/naverAuth.dart';
-import 'package:flutter_social_auth/auth/redditAuth.dart';
-import 'package:flutter_social_auth/auth/twitterAuth.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_social_auth/auth/apple_auth.dart';
+import 'package:flutter_social_auth/auth/facebook_auth.dart';
+import 'package:flutter_social_auth/auth/github_auth.dart';
+import 'package:flutter_social_auth/auth/google_auth.dart';
+import 'package:flutter_social_auth/auth/instagram_auth.dart';
+import 'package:flutter_social_auth/auth/kakao_auth.dart';
+import 'package:flutter_social_auth/auth/naver_auth.dart';
+import 'package:flutter_social_auth/auth/reddit_auth.dart';
+import 'package:flutter_social_auth/auth/twitter_auth.dart';
 import 'package:flutter_social_auth/common/size.dart';
 
-void main() {
+Future<void> main() async {
+  // flutter_config
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+
   runApp(const MyApp());
 }
 
@@ -51,33 +56,33 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
                 AppleAuth(),
-                SizedBox(width: spacer),
+                const SizedBox(width: spacer),
                 FacebookAuth(),
-                SizedBox(width: spacer),
+                const SizedBox(width: spacer),
                 GithubAuth(),
               ],
             ),
             const SizedBox(height: spacer),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
                 GoogleAuth(),
-                SizedBox(width: spacer),
+                const SizedBox(width: spacer),
                 InstagramAuth(),
-                SizedBox(width: spacer),
+                const SizedBox(width: spacer),
                 KakaoAuth(),
               ],
             ),
              const SizedBox(height: spacer),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
                 NaverAuth(),
-                SizedBox(width: spacer),
+                const SizedBox(width: spacer),
                 RedditAuth(),
-                SizedBox(width: spacer),
+                const SizedBox(width: spacer),
                 TwitterAuth(),
               ]
             ),
