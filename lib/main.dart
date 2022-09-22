@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social_auth/auth/appleAuth.dart';
+import 'package:flutter_social_auth/auth/facebookAuth.dart';
+import 'package:flutter_social_auth/auth/githubAuth.dart';
+import 'package:flutter_social_auth/auth/googleAuth.dart';
+import 'package:flutter_social_auth/auth/instagramAuth.dart';
+import 'package:flutter_social_auth/auth/kakaoAuth.dart';
+import 'package:flutter_social_auth/auth/naverAuth.dart';
+import 'package:flutter_social_auth/auth/redditAuth.dart';
+import 'package:flutter_social_auth/auth/twitterAuth.dart';
 import 'package:flutter_social_auth/common/size.dart';
 
 void main() {
@@ -42,122 +51,34 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                // Apple
-                IconButton(
-                  onPressed: () {print("apple");},
-                  icon: Image.asset(
-                    'assets/apple_icon.png',
-                    fit: BoxFit.cover,
-                  ),
-                  iconSize: iconSize,
-                ),
-
-                const SizedBox(width: spacer),
-
-                // Facebook
-                IconButton(
-                  onPressed: () {print("facebook");},
-                  icon: Image.asset(
-                    'assets/facebook_icon.png',
-                    fit: BoxFit.cover,
-                  ),
-                  iconSize: iconSize,
-                ),
-
-                const SizedBox(width: spacer),
-
-                /** Github **/
-                IconButton(
-                  onPressed: () {print("github");},
-                  icon: Image.asset(
-                    'assets/github_icon.png',
-                    fit: BoxFit.cover,
-                  ),
-                  iconSize: iconSize,
-                ),
+              children: const <Widget>[
+                AppleAuth(),
+                SizedBox(width: spacer),
+                FacebookAuth(),
+                SizedBox(width: spacer),
+                GithubAuth(),
               ],
             ),
-
             const SizedBox(height: spacer),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                /** Google **/
-                IconButton(
-                  onPressed: () {print("google");},
-                  icon: Image.asset(
-                    'assets/google_icon.png',
-                    fit: BoxFit.cover,
-                  ),
-                  iconSize: iconSize,
-                ),
-
-                const SizedBox(width: spacer),
-
-                /** Instagram **/
-                IconButton(
-                  onPressed: () {print("instagram");},
-                  icon: Image.asset(
-                    'assets/instagram_icon.png',
-                    fit: BoxFit.cover,
-                  ),
-                  iconSize: iconSize,
-                ),
-
-                const SizedBox(width: spacer),
-
-                /** Kakao **/
-                IconButton(
-                  onPressed: () {print("kakao");},
-                  icon: Image.asset(
-                    'assets/kakao_icon.png',
-                    fit: BoxFit.cover,
-                  ),
-                  iconSize: iconSize,
-                ),
+              children: const <Widget>[
+                GoogleAuth(),
+                SizedBox(width: spacer),
+                InstagramAuth(),
+                SizedBox(width: spacer),
+                KakaoAuth(),
               ],
             ),
-
-            const SizedBox(height: spacer),
-
+             const SizedBox(height: spacer),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                /** Naver **/
-                IconButton(
-                  onPressed: () {print("naver");},
-                  icon: Image.asset(
-                    'assets/naver_icon.png',
-                    fit: BoxFit.cover,
-                  ),
-                  iconSize: iconSize,
-                ),
-
-                const SizedBox(width: spacer),
-
-                /** Reddit **/
-                IconButton(
-                  onPressed: () {print("reddit");},
-                  icon: Image.asset(
-                    'assets/reddit_icon.png',
-                    fit: BoxFit.cover,
-                  ),
-                  iconSize: iconSize,
-                ),
-
-                const SizedBox(width: spacer),
-
-                /** Twitter **/
-                IconButton(
-                  onPressed: () {print("twitter");},
-                  icon: Image.asset(
-                    'assets/twitter_icon.png',
-                    fit: BoxFit.cover,
-                  ),
-                  iconSize: iconSize,
-                ),
+              children: const <Widget>[
+                NaverAuth(),
+                SizedBox(width: spacer),
+                RedditAuth(),
+                SizedBox(width: spacer),
+                TwitterAuth(),
               ]
             ),
           ],
