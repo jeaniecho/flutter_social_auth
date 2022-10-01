@@ -59,7 +59,25 @@ class _KakaoAuthState extends State<KakaoAuth> {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {print("kakao");},
+      onPressed: () async {
+        String title = "Kakao Sign In";
+        String content = await signIn() ? "Successfully signed in!" : "Sign in failed :(";
+
+
+        showDialog(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            title: Text(title),
+            content: Text(content),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () => Navigator.pop(context, 'OK'),
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        );
+      },
       icon: Image.asset(
         'assets/kakao_icon.png',
         fit: BoxFit.cover,
