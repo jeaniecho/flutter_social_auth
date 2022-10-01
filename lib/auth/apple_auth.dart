@@ -21,8 +21,8 @@ class _AppleAuthState extends State<AppleAuth> {
         );
 
         debugPrint('credential.state = $credential');
-        debugPrint('credential.state = ${credential.email}');
-        debugPrint('credential.state = ${credential.userIdentifier}');
+        debugPrint('credential.email = ${credential.email}');
+        debugPrint('credential.userIdentifier = ${credential.userIdentifier}');
 
         return true;
       }
