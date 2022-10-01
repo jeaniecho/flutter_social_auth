@@ -19,11 +19,14 @@ PODS:
     - AppAuth/Core (~> 1.4)
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.7.2)
+  - sign_in_with_apple (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_config (from `.symlinks/plugins/flutter_config/ios`)
   - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/ios`)
+  - sign_in_with_apple (from `.symlinks/plugins/sign_in_with_apple/ios`)
 
 SPEC REPOS:
   trunk:
@@ -39,6 +42,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_config/ios"
   google_sign_in_ios:
     :path: ".symlinks/plugins/google_sign_in_ios/ios"
+  sign_in_with_apple:
+    :path: ".symlinks/plugins/sign_in_with_apple/ios"
 
 SPEC CHECKSUMS:
   AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
@@ -48,6 +53,7 @@ SPEC CHECKSUMS:
   GoogleSignIn: f4d3939cc0d9264d7509c4b9a924a6c987e30b54
   GTMAppAuth: 4d8f864896f3646f0c33baf38a28362f4c601e15
   GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
+  sign_in_with_apple: f3bf75217ea4c2c8b91823f225d70230119b8440
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
 
